@@ -1,11 +1,13 @@
 import React from "react";
 import { login } from "../features/user";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 function Login() {
   const dispatch = useDispatch();
+  const color = useSelector((state) => state.color.value);
   return (
     <>
       <button
+        style={{ backgroundColor: color }}
         onClick={() => {
           dispatch(
             login({
